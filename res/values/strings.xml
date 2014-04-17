@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Hr.Net</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+	<string name="internet_used">Mobile Usage</string>
+	<string name="set_data_plan">Set data plan</string>
+	<string name="internet_remaining">Internet Remaining</string>
+	<string name="warning_notsetpro_des">Warning! your current data plan isn\'t declare yet, \nplease set data plan first (tap here)</string>
+	<string name="set_data_plan_title">your data plan</string>
+	<string name="action_set_data_plan">set_data_plan</string>
+	<string name="action_clear_data_usage">reset counter</string>
+	<string name="action_clear_data_usage_des">Do you want to reset internet usage conunter?</string>
+	<string name="set_data_plan_box_des">enter your data plan in minute or in format (hh:mm)</string>
+	<string name="ok">OK</string>
+	<string name="yes">Yes</string>
+	<string name="no">No</string>
+	<string name="fail_invalid_input">Failed, Invalid Input</string>
+	<string name="applying_pleasewait">Applying...,please wait!</string>
+	<string name="notification_setting">Notification Settings</string>
+	<string name="notification_counter_none">Not show</string>
+	<string name="notification_counter_increase">show time used</string>
+	<string name="notification_counter_decrease">show time remain</string>
+	<string name="notialwaystype">Time counter</string>
+	<string name="noti_setting_timeoutalert">Alert when timeout</string>
+	<string name="noti_setting_timeoutalert_des">alert when use more than declare package</string>
+	<string name="set_mobile_data_preference">Mobile data Magnament</string>
+	<string name="set_disconnect_outofpack">Disconnect when out of data plan</string>
+	<string name="set_disconnect_outofpack_des">for save your money</string>
+	<string name="set_disconnect_dontuse">Disconnect when turn off screen for 10 min</string>
+	<string name="set_disconnect_dontuse_des">save your money if you forgot turn off internet.</string>
+</resources>

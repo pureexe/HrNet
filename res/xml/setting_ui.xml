@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+ 
+   <PreferenceCategory
+            android:title="@string/notification_setting">
+ 
+            <CheckBoxPreference
+                  android:title = "@string/noti_setting_timeoutalert"
+                  android:summary = "@string/noti_setting_timeoutalert_des"
+                  android:key = "keyNotiTimeoutAlert"
+                  android:defaultValue = "true" />
+ 
+            <ListPreference
+                  android:title="@string/notialwaystype"
+                  android:key="keyNotiAlwaysType"
+                  android:defaultValue="1"
+                  android:entries="@array/listOptions"
+                  android:entryValues="@array/listValue"
+                   /> 
+ 
+   </PreferenceCategory>
+ 
+   <PreferenceCategory
+            android:title="@string/set_mobile_data_preference">
+ 
+                    <CheckBoxPreference
+                            android:key="keyDisconnectOutofpack"
+                            android:title="@string/set_disconnect_outofpack"
+                            android:summary="@string/set_disconnect_outofpack_des" />
+                    <CheckBoxPreference
+                            android:key="keyDisconnectDontUse"
+                            android:title="@string/set_disconnect_dontuse"
+                            android:summary="@string/set_disconnect_dontuse_des" />
+ 
+   </PreferenceCategory>
+ 
+</PreferenceScreen>

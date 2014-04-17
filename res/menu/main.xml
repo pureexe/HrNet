@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.pureexe.hrnet.MainActivity" >
+
+    <item
+        android:id="@+id/action_clear_data_usage"
+        android:orderInCategory="100"
+        android:title="@string/action_clear_data_usage"
+        android:icon="@drawable/ic_action_replay"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_set_dataplan"
+        android:orderInCategory="99"
+        android:title="@string/action_set_data_plan"
+        app:showAsAction="never"/>
+
+</menu>

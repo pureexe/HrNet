@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string-array name="listOptions">
+            <item>@string/notification_counter_increase</item>
+            <item>@string/notification_counter_decrease</item>
+            <item>@string/notification_counter_none</item>
+        </string-array>
+ 
+        <string-array name="listValue">
+            <item>1</item>
+            <item>2</item>
+            <item>3</item>
+        </string-array>
+</resources>

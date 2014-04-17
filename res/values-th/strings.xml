@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Hr.Net</string>
+    <string name="hello_world">สวัสดีชาวโลก</string>
+    <string name="action_settings">การตั้งค่า</string>
+    <string name="internet_used">เวลาใช้เครือข่ายมือถือ</string>
+	<string name="minute">นาที</string>
+	<string name="set_data_plane">ตั้งปริมาณอินเตอร์เน็ต</string>
+	<string name="internet_remaining">ปริมาณอินเตอร์เน็ตที่เหลือ</string>
+	<string name="warning_notsetpro_des">คำเตือน! คุณยังไม่ได้ตั้งค่าโปรโมชั่นปัจจุบัน \nกรุณาตั้งค่าเพื่อการทำงานที่สมบูรณ์ (แตะที่นี้)</string>
+	<string name="action_set_data_plan">กำหนดแพ็กเก็จที่ใช้งาน</string>
+	<string name="action_clear_data_usage">ล้างตัวจับเวลา</string>
+	<string name="action_clear_data_usage_des">คุณแน่ใจแล้วหรือที่จะล้างค่าตัวจับเวลาการใช้งาน?</string>
+	<string name="set_data_plan_title">แพ็กเก็จที่คุณใช้งาน</string>
+	<string name="set_data_plan_box_des">กรอกเวลาที่ใช้งานได้ในแพ็กเกจของคุณเป็นนาที หรือรูปแบบ (ชั่วโมง:นาที)</string>
+	<string name="ok">ตกลง</string>
+	<string name="yes">ใช่</string>
+	<string name="no">ไม่</string>
+	<string name="fail_invalid_input">ผิดพลาด,นี่ไม่ใช่ตัวเลข</string>
+	<string name="applying_pleasewait">กำลังดำเนินการโปรดรอสักครู่...</string>
+	<string name="notification_setting">ตั้งค่าการแจ้งเตือน</string>
+	<string name="notification_counter_none">ไม่แสดง</string>
+	<string name="notification_counter_increase">แสดงเวลาที่ใช้งาน</string>
+	<string name="notification_counter_decrease">แสดงเวลาที่เหลือ</string>
+	<string name="notialwaystype">ตัวนับเวลา</string>
+	<string name="noti_setting_timeoutalert">เตือนเวลาหมด</string>
+	<string name="noti_setting_timeoutalert_des">เตือนเมื่อใช้งานเกินแพ็คเกจที่กำหนด</string>
+	<string name="set_mobile_data_preference">ตั้งค่าการใช้งานข้อมูล</string>
+	<string name="set_disconnect_outofpack">ตัดการเชื่อมต่อเมื่อใช้เกิน</string>
+	<string name="set_disconnect_outofpack_des">หยุดใช้เมื่อใช้เกินเพื่อประหยัดค่าใช้จ่าย</string>
+	<string name="set_disconnect_dontuse">ตัดการเชื่อมต่อเมื่อไม่ใช้เกิน 10 นาที</string>
+	<string name="set_disconnect_dontuse_des">ตัดการเชื่อมต่อเมื่อเปิดอินเตอร์เน็ตทิ้งไว้</string>
+</resources>
