@@ -31,6 +31,7 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		PhoneUtil.setMobileDataEnabled(getApplicationContext(), true);
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		actionBar.setDisplayShowTitleEnabled(false);
@@ -46,7 +47,6 @@ public class MainActivity extends ActionBarActivity {
 		                   .setTabListener(new TabListener<UsageHistoryFragment>(
 		                           this, "usage", UsageHistoryFragment.class));
 		    actionBar.addTab(tab);
-		    
 
 		
 		/*

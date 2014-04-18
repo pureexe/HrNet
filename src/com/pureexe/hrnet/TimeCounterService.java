@@ -55,13 +55,16 @@ public class TimeCounterService extends Service {
                 	dm.setInt("UsageTime", dm.getInt("UsageTime")+1);
                 	String date = DateUtil.getThisDate();
                 	dm.setInt("Date_"+date, dm.getInt("Date_"+date)+1);
-                	noti.push_timecounter(dm.getInt("UsageTime"));
+                	if(dm.getSettingString(SettingUI.KEY_NOTI_ALWAYS_TYPE).equals("1")){
+                		noti.push_timecounter(dm.getInt("UsageTime"));
+                	} else if(dm.getSettingString(SettingUI.KEY_NOTI_ALWAYS_TYPE).equals("2")){
+                		noti.push_timecountdown(dm.getInt("DataPlan")-dm.getInt("UsageTime"));
                 	}
                 	else {
                 		NotifyManager.cancle(getApplicationContext(), NotifyManager.TIME_COUNTER);
                 	}
 			}
-		};
+		}};
 		new Thread(){
 			public void run(){
 				try {

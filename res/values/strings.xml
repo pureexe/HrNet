@@ -23,11 +23,14 @@
 	<string name="notification_counter_increase">show time used</string>
 	<string name="notification_counter_decrease">show time remain</string>
 	<string name="notialwaystype">Time counter</string>
-	<string name="noti_setting_timeoutalert">Alert when timeout</string>
-	<string name="noti_setting_timeoutalert_des">alert when use more than declare package</string>
+	<string name="noti_setting_timeoutalert">Warning when use too much data </string>
+	<string name="noti_setting_timeoutalert_des">alert when have time less than 5 minute from declare package</string>
 	<string name="set_mobile_data_preference">Mobile data Magnament</string>
 	<string name="set_disconnect_outofpack">Disconnect when out of data plan</string>
 	<string name="set_disconnect_outofpack_des">for save your money</string>
 	<string name="set_disconnect_dontuse">Disconnect when turn off screen for 10 min</string>
 	<string name="set_disconnect_dontuse_des">save your money if you forgot turn off internet.</string>
+	<string name="remaining">\u0020remaining</string>
+	<string name="outofdataplan">Out of data</string>
+	<string name="outofdataplan_des">you use data more than declare dataplan.</string>
 </resources>

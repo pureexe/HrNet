@@ -1178,7 +1178,7 @@ containing a value of this type.
         public static final int hello_world=0x7f0b000e;
         public static final int internet_remaining=0x7f0b0012;
         public static final int internet_used=0x7f0b0010;
-        public static final int minute=0x7f0b002a;
+        public static final int minute=0x7f0b002d;
         public static final int no=0x7f0b001b;
         public static final int noti_setting_timeoutalert=0x7f0b0023;
         public static final int noti_setting_timeoutalert_des=0x7f0b0024;
@@ -1188,10 +1188,13 @@ containing a value of this type.
         public static final int notification_counter_none=0x7f0b001f;
         public static final int notification_setting=0x7f0b001e;
         public static final int ok=0x7f0b0019;
+        public static final int outofdataplan=0x7f0b002b;
+        public static final int outofdataplan_des=0x7f0b002c;
+        public static final int remaining=0x7f0b002a;
         public static final int set_data_plan=0x7f0b0011;
         public static final int set_data_plan_box_des=0x7f0b0018;
         public static final int set_data_plan_title=0x7f0b0014;
-        public static final int set_data_plane=0x7f0b002b;
+        public static final int set_data_plane=0x7f0b002e;
         public static final int set_disconnect_dontuse=0x7f0b0028;
         public static final int set_disconnect_dontuse_des=0x7f0b0029;
         public static final int set_disconnect_outofpack=0x7f0b0026;

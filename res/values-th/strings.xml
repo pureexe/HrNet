@@ -24,11 +24,14 @@
 	<string name="notification_counter_increase">แสดงเวลาที่ใช้งาน</string>
 	<string name="notification_counter_decrease">แสดงเวลาที่เหลือ</string>
 	<string name="notialwaystype">ตัวนับเวลา</string>
-	<string name="noti_setting_timeoutalert">เตือนเวลาหมด</string>
-	<string name="noti_setting_timeoutalert_des">เตือนเมื่อใช้งานเกินแพ็คเกจที่กำหนด</string>
+	<string name="noti_setting_timeoutalert">เตือนเวลาเหลือน้อย</string>
+	<string name="noti_setting_timeoutalert_des">เตือนเมื่อเหลือเวลา 5 นาที</string>
 	<string name="set_mobile_data_preference">ตั้งค่าการใช้งานข้อมูล</string>
 	<string name="set_disconnect_outofpack">ตัดการเชื่อมต่อเมื่อใช้เกิน</string>
 	<string name="set_disconnect_outofpack_des">หยุดใช้เมื่อใช้เกินเพื่อประหยัดค่าใช้จ่าย</string>
 	<string name="set_disconnect_dontuse">ตัดการเชื่อมต่อเมื่อไม่ใช้เกิน 10 นาที</string>
 	<string name="set_disconnect_dontuse_des">ตัดการเชื่อมต่อเมื่อเปิดอินเตอร์เน็ตทิ้งไว้</string>
+	<string name="remaining">ยังใช้ได้</string>
+	<string name="outofdataplan">หมดเวลาการใช้งาน</string>
+	<string name="outofdataplan_des">ใช้งานเกินกว่าแพ็คเก็จที่กำหนดไว้แล้ว</string>
 </resources>

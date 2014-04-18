@@ -44,4 +44,16 @@ public class NotifyManager {
     	noti.flags |= Notification.FLAG_ONGOING_EVENT;
     	mNotifyMgr.notify(TIME_COUNTER,noti);
 	}
+	public void push_timecountdown(int time){
+		if(time>0){
+		mBuilder.setContentTitle(""+time+" "+context.getString(R.string.minute)+context.getString(R.string.remaining));
+		}
+		else {
+			mBuilder.setContentTitle(context.getString(R.string.outofdataplan));
+			mBuilder.setContentText(context.getString(R.string.outofdataplan_des));
+		}
+		noti = mBuilder.build();
+    	noti.flags |= Notification.FLAG_ONGOING_EVENT;
+    	mNotifyMgr.notify(TIME_COUNTER,noti);
+	}
 }
