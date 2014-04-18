@@ -1,5 +1,6 @@
 package com.pureexe.hrnet;
 
+import android.support.v7.app.ActionBar.Tab;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.DialogFragment;
@@ -30,18 +31,39 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		actionBar.setDisplayShowTitleEnabled(false);
+		  
+		    Tab tab = actionBar.newTab()
+		                       .setText("Main")
+		                       .setTabListener(new TabListener<MainFragment>(
+		                               this, "main", MainFragment.class));
+		    actionBar.addTab(tab);
 
+		    tab = actionBar.newTab()
+		                   .setText("Usage")
+		                   .setTabListener(new TabListener<UsageHistoryFragment>(
+		                           this, "usage", UsageHistoryFragment.class));
+		    actionBar.addTab(tab);
+		    
+
+		
+		/*
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new MainFragment(this)).commit();
-		}
+					.add(R.id.container, new MainFragment()).commit();
+		}*/
 		Context context = this;
 		if(!ServiceUtil.checkServiceRunning(context, TimeCounterService.class)){
 			Intent active = new Intent(context, TimeCounterService.class);
 			context.startService(active);
 		}
-		dm = new DataManager(getApplicationContext());
+		
+		
 	}
+	
+	
 	
 
 	@Override
@@ -137,5 +159,16 @@ public class MainActivity extends ActionBarActivity {
 				}
 			});
 		builder.show();
+	}
+
+
+
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		dm = new DataManager(getApplicationContext());
+
 	}
 }

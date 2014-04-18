@@ -12,7 +12,11 @@ import android.widget.Toast;
 public class SettingUI extends PreferenceActivity implements OnSharedPreferenceChangeListener{
 
 	private ListPreference NotificationAlwaysType;
-	public final String KEY_NOTI_ALWAYS_TYPE = "keyNotiAlwaysType"; 
+	public static final String KEY_NOTI_ALWAYS_TYPE = "keyNotiAlwaysType";
+	public static final String KEY_NOTI_TIMEOUT_ALERT = "keyNotiTimeoutAlert";
+	public static final String KEY_DISCONNECT_OUTOFPACK = "keyDisconnectOutofpack";
+	public static final String KEY_DISCONNECT_DONTUSE = "keyDisconnectDontUse";
+	
 	private Context context;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +34,6 @@ public class SettingUI extends PreferenceActivity implements OnSharedPreferenceC
 	public void onSharedPreferenceChanged(SharedPreferences pref, String prefKey) {
 		if(prefKey.equals(KEY_NOTI_ALWAYS_TYPE)){
 			setNotiAlwayTypeSummary();
-			
 		}
 	}
 	public void setNotiAlwayTypeSummary(){

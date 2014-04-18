@@ -3,19 +3,17 @@ package com.pureexe.hrnet;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 public class DataManager {
 	private SharedPreferences sharedPref;
 	private SharedPreferences.Editor editor;
+	private static Context context;
 	DataManager(Context activity)
 	{
 		sharedPref = activity.getSharedPreferences("preferences", Context.MODE_PRIVATE);
 		editor = sharedPref.edit();
-	}
-	public void resetFisrtTime()
-	{
-		editor.putBoolean("FirstTime", true);
-		editor.commit();
+		context = activity;
 	}
 	/*** Easy Define ***/
 	public void setBool(String name,boolean in)
@@ -54,6 +52,12 @@ public class DataManager {
 	{
 		return sharedPref.getString(name,null);
 	}
-	
+	/** get Setting **/
+	public String getSettingString(String key){
+        return PreferenceManager.getDefaultSharedPreferences(context).getString(key, "");
+    }
+	public boolean getSettingBoolean(String key){
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(key, true);
+    }
 	
 }

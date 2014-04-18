@@ -995,10 +995,12 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int ic_action_replay=0x7f020057;
-        public static final int ic_action_time=0x7f020058;
-        public static final int ic_launcher=0x7f020059;
+        public static final int ic_action_settings=0x7f020058;
+        public static final int ic_action_time=0x7f020059;
+        public static final int ic_launcher=0x7f02005a;
     }
     public static final class id {
+        public static final int Line=0x7f060040;
         public static final int action_bar=0x7f06001c;
         public static final int action_bar_activity_content=0x7f060015;
         public static final int action_bar_container=0x7f06001b;
@@ -1006,16 +1008,17 @@ containing a value of this type.
         public static final int action_bar_root=0x7f06001a;
         public static final int action_bar_subtitle=0x7f060023;
         public static final int action_bar_title=0x7f060022;
-        public static final int action_clear_data_usage=0x7f060040;
+        public static final int action_clear_data_usage=0x7f060042;
         public static final int action_context_bar=0x7f06001d;
         public static final int action_menu_divider=0x7f060016;
         public static final int action_menu_presenter=0x7f060017;
         public static final int action_mode_close_button=0x7f060024;
-        public static final int action_set_dataplan=0x7f060042;
-        public static final int action_settings=0x7f060041;
+        public static final int action_set_dataplan=0x7f060044;
+        public static final int action_settings=0x7f060043;
         public static final int activity_chooser_view_content=0x7f060025;
         public static final int always=0x7f06000b;
         public static final int beginning=0x7f060011;
+        public static final int box=0x7f060041;
         public static final int checkbox=0x7f06002d;
         public static final int collapseActionView=0x7f06000d;
         public static final int container=0x7f06003c;
@@ -1118,7 +1121,8 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030016;
         public static final int activity_main=0x7f030017;
         public static final int fragment_main=0x7f030018;
-        public static final int support_simple_spinner_dropdown_item=0x7f030019;
+        public static final int fragment_usagehistory=0x7f030019;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
     }
     public static final class menu {
         public static final int main=0x7f0e0000;

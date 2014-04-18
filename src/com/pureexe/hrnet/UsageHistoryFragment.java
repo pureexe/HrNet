@@ -14,29 +14,43 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-@SuppressLint("ValidFragment")
-public class MainFragment extends Fragment {
+import com.jjoe64.graphview.*;
+import com.jjoe64.graphview.GraphView.GraphViewData;
+
+public class UsageHistoryFragment extends Fragment {
 
 
 	public ActionBarActivity activity;
 	private DataManager dm;
-	private Thread refreshUIThread;
 
-	public MainFragment() {
+	public UsageHistoryFragment() {
 
 	}
 
-	public MainFragment(ActionBarActivity a) {
-		activity = a;
-	}
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_main, container,
+		View rootView = inflater.inflate(R.layout.fragment_usagehistory, container,
 				false);
+		GraphView graphView = new LineGraphView(getActivity().getApplicationContext() , "");
+		
+		GraphViewSeries exampleSeries = new GraphViewSeries(new GraphViewData[] {
+			    new GraphViewData(1, 2.0d)
+			    , new GraphViewData(2, 9.0d)
+			    , new GraphViewData(3, 4.0d)
+			    , new GraphViewData(4, 3.0d)
+			});
+			 
+			
+			graphView.addSeries(exampleSeries); // data
+			graphView.getGraphViewStyle().setVerticalLabelsColor(Color.BLACK);
+			graphView.getGraphViewStyle().setHorizontalLabelsColor(Color.BLACK);
+			LinearLayout layout = (LinearLayout) rootView.findViewById(R.id.box);
+			layout.addView(graphView);
 		return rootView;
 	}
 
