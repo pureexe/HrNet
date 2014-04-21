@@ -9,7 +9,7 @@
         android:orderInCategory="100"
         android:title="@string/action_clear_data_usage"
         android:icon="@drawable/ic_action_replay"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always"/>
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
@@ -17,10 +17,5 @@
         android:icon="@drawable/ic_action_settings"
         app:showAsAction="always"
         />
-    <item
-        android:id="@+id/action_set_dataplan"
-        android:orderInCategory="99"
-        android:title="@string/action_set_data_plan"
-        app:showAsAction="never"/>
 
 </menu>

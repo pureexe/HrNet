@@ -9,8 +9,8 @@ public class DataManager {
 	private SharedPreferences sharedPref;
 	private SharedPreferences.Editor editor;
 	private static Context context;
-	DataManager(Context activity)
-	{
+	public DataManager(Context activity)
+	{ 
 		sharedPref = activity.getSharedPreferences("preferences", Context.MODE_PRIVATE);
 		editor = sharedPref.edit();
 		context = activity;
@@ -51,6 +51,14 @@ public class DataManager {
 	public String getString(String name)
 	{
 		return sharedPref.getString(name,null);
+	}
+	public void setLong(String name,long in)
+	{
+		editor.putLong(name, in);
+		editor.commit();
+	}
+	public long getLong(String name){
+		return sharedPref.getLong(name, 0);
 	}
 	/** get Setting **/
 	public String getSettingString(String key){

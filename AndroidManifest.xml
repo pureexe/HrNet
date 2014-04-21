@@ -2,18 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pureexe.hrnet"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="0.1 [Developer Debug]" >
 
     <uses-sdk
         android:minSdkVersion="9"
         android:targetSdkVersion="19" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />    
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
-
-
-    
+	<uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     
     <application
         android:allowBackup="true"
@@ -34,6 +32,9 @@
         </activity>
         <service
             android:name="com.pureexe.hrnet.TimeCounterService"
+            android:exported="false"/>
+        <service
+            android:name="com.pureexe.hrnet.RefreshUIService"
             android:exported="false"/>
         <receiver
             android:name="com.pureexe.hrnet.NetworkChangeReceiver"

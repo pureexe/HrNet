@@ -1,38 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
   xmlns:android="http://schemas.android.com/apk/res/android">
- 
-   <PreferenceCategory
-            android:title="@string/notification_setting">
- 
-            <CheckBoxPreference
-                  android:title = "@string/noti_setting_timeoutalert"
-                  android:summary = "@string/noti_setting_timeoutalert_des"
-                  android:key = "keyNotiTimeoutAlert"
-                  android:defaultValue = "true" />
- 
-            <ListPreference
-                  android:title="@string/notialwaystype"
-                  android:key="keyNotiAlwaysType"
-                  android:defaultValue="1"
-                  android:entries="@array/listOptions"
-                  android:entryValues="@array/listValue"
-                   /> 
- 
-   </PreferenceCategory>
- 
-   <PreferenceCategory
-            android:title="@string/set_mobile_data_preference">
- 
-                    <CheckBoxPreference
-                            android:key="keyDisconnectOutofpack"
-                            android:title="@string/set_disconnect_outofpack"
-                            android:summary="@string/set_disconnect_outofpack_des" />
-                    <CheckBoxPreference
-                            android:key="keyDisconnectDontUse"
-                            android:title="@string/set_disconnect_dontuse"
-                            android:summary="@string/set_disconnect_dontuse_des" />
- 
-   </PreferenceCategory>
- 
+    <PreferenceCategory android:title="@string/set_mobile_data_preference">
+        <com.pureexe.hrnet.Dialog.PromotionDialog android:title="@string/set_your_data_plan" />
+        <CheckBoxPreference android:title="@string/set_disconnect_outofpack" android:key="keyDisconnectOutofpack" android:summary="@string/set_disconnect_outofpack_des" />
+        <CheckBoxPreference android:title="@string/set_disconnect_dontuse" android:key="keyDisconnectDontUse" android:summary="@string/set_disconnect_dontuse_des" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/notification_setting">
+        <com.pureexe.hrnet.Dialog.TimeCounterResetDialog android:title="@string/action_clear_data_usage" />
+        <ListPreference android:entries="@array/listOptions" android:title="@string/notialwaystype" android:key="keyNotiAlwaysType" android:defaultValue="1" android:entryValues="@array/listValue" />
+        <CheckBoxPreference android:title="@string/noti_setting_timeoutalert" android:key="keyNotiTimeoutAlert" android:summary="@string/noti_setting_timeoutalert_des" android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/About">
+        <com.pureexe.hrnet.Dialog.DeveloperDialog android:title="@string/Developer" android:summary="@string/Pakkapon_Phongthawee" android:dialogIcon="@drawable/ic_action_replay" />
+        <com.pureexe.hrnet.Dialog.BugReportDialog android:title="@string/BugReport" android:summary="@string/bugreport_url" />
+        <com.pureexe.hrnet.Dialog.SourceCodeDialog android:title="@string/Sourcecode" android:summary="@string/sourcecode_url" />
+        
+        
+    </PreferenceCategory>
 </PreferenceScreen>

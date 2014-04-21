@@ -7,6 +7,9 @@ import java.util.Calendar;
 
 
 
+
+import java.util.Date;
+
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.IntentService;
@@ -18,6 +21,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.PowerManager;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 import android.widget.Toast;
@@ -25,7 +29,7 @@ import android.widget.Toast;
 public class TimeCounterService extends Service {
 
 	public DataManager dm;
-	
+	public PowerManager pm;
 	private Context context;
 	private Runnable mUpdateResults;
 	private NotifyManager noti;
@@ -43,6 +47,7 @@ public class TimeCounterService extends Service {
 		context = getApplicationContext();
 		dm = new DataManager(context);
 		noti = new NotifyManager(context);
+		 pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
 	}
 
 	@Override
@@ -63,7 +68,28 @@ public class TimeCounterService extends Service {
                 	else {
                 		NotifyManager.cancle(getApplicationContext(), NotifyManager.TIME_COUNTER);
                 	}
+        			if(dm.getInt("DataPlan")-dm.getInt("UsageTime")<0){
+        				if(dm.getSettingBoolean(SettingUI.KEY_DISCONNECT_OUTOFPACK)){
+        					PhoneUtil.setMobileDataEnabled(getApplicationContext(), false);
+        					noti.push_netcut_alert();
+        				}
+        			} else if(dm.getInt("DataPlan")-dm.getInt("UsageTime")<=5){
+        				if(dm.getSettingBoolean(SettingUI.KEY_NOTI_TIMEOUT_ALERT)){
+        					noti.push_lownet_alert();
+        				}
+        			}
+        			if(!pm.isScreenOn()){
+        				if(dm.getSettingBoolean(SettingUI.KEY_DISCONNECT_DONTUSE)){
+        					if(dm.getBool("ScreenCheck")){
+        						if(new Date().getTime()>=dm.getLong("ScreenCheckTime")+600000){
+        							PhoneUtil.setMobileDataEnabled(getApplicationContext(), false);
+        						}
+        					}
+        					
+        				}
+        			}
 			}
+
 		}};
 		new Thread(){
 			public void run(){

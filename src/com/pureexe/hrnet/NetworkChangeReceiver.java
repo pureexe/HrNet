@@ -35,8 +35,10 @@ public class NetworkChangeReceiver extends BroadcastReceiver {
         		noti.push_timecountdown(dm.getInt("DataPlan")-dm.getInt("UsageTime"));
         	}
 			if((dm.getInt("DataPlan")-dm.getInt("UsageTime"))<=0){
-				Toast.makeText(context, "WTF", Toast.LENGTH_LONG).show();
+				if(dm.getSettingBoolean(SettingUI.KEY_DISCONNECT_OUTOFPACK)){
 				PhoneUtil.setMobileDataEnabled(context,false);
+				noti.push_netcut_alert();
+				}
 			}
 			dm.setBool("NotifyRUNNED", true);
 		} else {

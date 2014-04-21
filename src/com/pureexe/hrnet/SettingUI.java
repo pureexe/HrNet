@@ -28,6 +28,8 @@ public class SettingUI extends PreferenceActivity implements OnSharedPreferenceC
         prefs.registerOnSharedPreferenceChangeListener(this);
         NotificationAlwaysType = (ListPreference)findPreference(KEY_NOTI_ALWAYS_TYPE);
         setNotiAlwayTypeSummary();
+
+
 }
 
 	@Override

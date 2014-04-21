@@ -1,16 +1,29 @@
 package com.pureexe.hrnet;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+
+import com.pureexe.hrnet.Dialog.DialogUtil;
+
 import android.support.v7.app.ActionBar.Tab;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.text.InputType;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -31,39 +44,40 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		PhoneUtil.setMobileDataEnabled(getApplicationContext(), true);
 		ActionBar actionBar = getSupportActionBar();
+
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		actionBar.setDisplayShowTitleEnabled(false);
+		actionBar.setDisplayShowTitleEnabled(true);
+
 		  
 		    Tab tab = actionBar.newTab()
-		                       .setText("Main")
+		                       .setText(getString(R.string.notialwaystype))
 		                       .setTabListener(new TabListener<MainFragment>(
-		                               this, "main", MainFragment.class));
+		                               this,getString(R.string.timecounter), MainFragment.class));
 		    actionBar.addTab(tab);
 
 		    tab = actionBar.newTab()
-		                   .setText("Usage")
+		                   .setText(getString(R.string.usage))
 		                   .setTabListener(new TabListener<UsageHistoryFragment>(
-		                           this, "usage", UsageHistoryFragment.class));
+		                           this,getString(R.string.usage), UsageHistoryFragment.class));
 		    actionBar.addTab(tab);
 
-		
 		/*
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new MainFragment()).commit();
 		}*/
-		Context context = this;
-		if(!ServiceUtil.checkServiceRunning(context, TimeCounterService.class)){
-			Intent active = new Intent(context, TimeCounterService.class);
-			context.startService(active);
+		if(!ServiceUtil.checkServiceRunning(this, TimeCounterService.class)){
+			Intent active = new Intent(this, TimeCounterService.class);
+			startService(active);
 		}
-		
-		
+		dm = new DataManager(getApplicationContext());
+		if (NetworkUtil.getConnectivityStatus(this) != NetworkUtil.TYPE_NOT_CONNECTED) {
+				if((new Date().getTime()>=dm.getLong("LastCheckUpdate")+86400000)){
+					new UpdateCheckerTask(this).execute();
+			}
+		}
 	}
-	
-	
 	
 
 	@Override
@@ -88,10 +102,7 @@ public class MainActivity extends ActionBarActivity {
 			return true;
 			
 		}
-		else if(id == R.id.action_set_dataplan){
-			setDataPlan(null);
-			return true;
-		} else if(id == R.id.action_clear_data_usage){
+		 else if(id == R.id.action_clear_data_usage){
 			resetCounterConfirm();
 			
 		}
@@ -99,66 +110,10 @@ public class MainActivity extends ActionBarActivity {
 	}
 	
 	public void setDataPlan(View v){
-		AlertDialog.Builder	builder = new AlertDialog.Builder(this);
-		builder.setTitle(getString(R.string.set_data_plan_title));
-		builder.setMessage(getString(R.string.set_data_plan_box_des));
-		//builder.setCancelable(false);
-		final EditText input = new EditText(this);
-		input.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_CLASS_TEXT);
-		builder.setView(input);
-		builder.setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
-		
-		public void onClick(DialogInterface dialog, int whichButton) {
-				try{
-					String inp = input.getText().toString();
-					if(inp.equals("")){
-						return;
-					}
-					String[] inpBox= inp.split(":");
-					int minute =Integer.parseInt(inpBox[0]);
-					if(inpBox.length==1){
-						dm.setInt("DataPlan", minute);
-						Toast.makeText(getApplicationContext(), getString(R.string.applying_pleasewait), Toast.LENGTH_LONG).show();
-					}
-					else if(inpBox.length==2){
-						minute*=60;
-						minute+=Integer.parseInt(inpBox[1]);
-						dm.setInt("DataPlan", minute);
-						Toast.makeText(getApplicationContext(), getString(R.string.applying_pleasewait), Toast.LENGTH_LONG).show();
-					}
-					else {
-						Toast.makeText(getApplicationContext(), getString(R.string.fail_invalid_input), Toast.LENGTH_LONG).show();
-					}
-					
-				}
-				catch(Exception e)
-				{
-					Toast.makeText(getApplicationContext(), getString(R.string.fail_invalid_input), Toast.LENGTH_LONG).show();
-				}
-				
-			
-			}
-		});
-		builder.show();
+		DialogUtil.setDataPlan(this);
 	}
 	public void resetCounterConfirm(){
-		AlertDialog.Builder	builder = new AlertDialog.Builder(this);
-		builder.setTitle(getString(R.string.action_clear_data_usage))
-			.setMessage(getString(R.string.action_clear_data_usage_des))
-			.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface arg0, int arg1) {
-					Toast.makeText(getApplicationContext(), getString(R.string.applying_pleasewait), Toast.LENGTH_LONG).show();
-					dm.setInt("UsageTime", 0);
-					NotifyManager.cancleAll(getApplicationContext());
-				}
-				
-			})
-			.setNegativeButton(getString(R.string.no),new DialogInterface.OnClickListener(){
-				public void onClick(DialogInterface arg0, int arg1) {
-				}
-			});
-		builder.show();
+		DialogUtil.reset_counter(this);
 	}
 
 
@@ -168,7 +123,7 @@ public class MainActivity extends ActionBarActivity {
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		dm = new DataManager(getApplicationContext());
 
 	}
+	
 }

@@ -14,7 +14,9 @@ public class NotifyManager {
 	private Notification noti;
 	private NotificationManager mNotifyMgr;
 	public static int TIME_COUNTER = 001; 
-	public static int EMPTY_MOBILE_DATA = 002; 
+	public static int EMPTY_MOBILE_DATA = 002;
+	public static int AUTO_DISCONNECT_YED = 003;
+	public static int AUTO_DISCONNECT_SCREENOFF = 004;
 	public NotifyManager(Context c){
 		context = c;
 		Intent resultIntent = new Intent(context,MainActivity.class);
@@ -40,7 +42,7 @@ public class NotifyManager {
 	}
 	public void push_timecounter(int time){
 		mBuilder.setContentTitle(""+time+" "+context.getString(R.string.minute));
-    	noti = mBuilder.build();
+		noti = mBuilder.build();
     	noti.flags |= Notification.FLAG_ONGOING_EVENT;
     	mNotifyMgr.notify(TIME_COUNTER,noti);
 	}
@@ -55,5 +57,25 @@ public class NotifyManager {
 		noti = mBuilder.build();
     	noti.flags |= Notification.FLAG_ONGOING_EVENT;
     	mNotifyMgr.notify(TIME_COUNTER,noti);
+	}
+	public void push_netcut_alert(){
+		mBuilder.setContentTitle(context.getString(R.string.auto_disconnect_yet));
+		mBuilder.setContentText(context.getString(R.string.outofdataplan_des));
+		noti = mBuilder.build();
+    	mNotifyMgr.notify(EMPTY_MOBILE_DATA,noti);
+	}
+	public void push_auto_screenoff(){
+		mBuilder.setContentTitle(context.getString(R.string.auto_disconnect_yet));
+		mBuilder.setContentText(context.getString(R.string.outofdataplan_des));
+		noti = mBuilder.build(); 
+    	mNotifyMgr.notify(AUTO_DISCONNECT_SCREENOFF,noti);
+	}
+
+	public void push_lownet_alert() {
+		mBuilder.setContentTitle(context.getString(R.string.auto_disconnect_yet));
+		mBuilder.setContentText(context.getString(R.string.outofdataplan_des));
+		noti = mBuilder.build();
+    	mNotifyMgr.notify(EMPTY_MOBILE_DATA,noti);
+		
 	}
 }
