@@ -58,4 +58,5 @@
 	<string name="Pakkapon_Phongthawee">Pakkapon Phongthawee</string>
 	<string name="bugreport_url">https://www.facebook.com/ThridLand</string>
 	<string name="sourcecode_url">https://www.github.com/pureexe/hrnet</string>
+	<string name="minute">min</string>
 </resources>

@@ -9,7 +9,7 @@
     <PreferenceCategory android:title="@string/notification_setting">
         <com.pureexe.hrnet.Dialog.TimeCounterResetDialog android:title="@string/action_clear_data_usage" />
         <ListPreference android:entries="@array/listOptions" android:title="@string/notialwaystype" android:key="keyNotiAlwaysType" android:defaultValue="1" android:entryValues="@array/listValue" />
-        <CheckBoxPreference android:title="@string/noti_setting_timeoutalert" android:key="keyNotiTimeoutAlert" android:summary="@string/noti_setting_timeoutalert_des" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/noti_setting_timeoutalert" android:key="keyNotiTimeoutAlert" android:summary="@string/noti_setting_timeoutalert_des" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/About">
         <com.pureexe.hrnet.Dialog.DeveloperDialog android:title="@string/Developer" android:summary="@string/Pakkapon_Phongthawee" android:dialogIcon="@drawable/ic_action_replay" />

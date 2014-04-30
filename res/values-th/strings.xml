@@ -8,7 +8,7 @@
 	<string name="minute">นาที</string>
 	<string name="set_data_plane">ตั้งปริมาณอินเตอร์เน็ต</string>
 	<string name="internet_remaining">ปริมาณอินเตอร์เน็ตที่เหลือ</string>
-	<string name="warning_notsetpro_des">คำเตือน! คุณยังไม่ได้ตั้งค่าโปรโมชั่นปัจจุบัน \nกรุณาตั้งค่าเพื่อการทำงานที่สมบูรณ์ (แตะที่นี้)</string>
+	<string name="warning_notsetpro_des">คำเตือน! คุณยังไม่ได้ตั้งค่าโปรโมชั่นปัจจุบัน \nกรุณาตั้งค่าเพื่อการทำงานที่สมบูรณ์ (แตะที่นี่)</string>
 	<string name="action_set_data_plan">กำหนดแพ็กเก็จที่ใช้งาน</string>
 	<string name="action_clear_data_usage">ล้างตัวจับเวลา</string>
 	<string name="action_clear_data_usage_des">คุณแน่ใจแล้วหรือที่จะล้างค่าตัวจับเวลาการใช้งาน?</string>
@@ -58,4 +58,5 @@
 	<string name="Pakkapon_Phongthawee">Pakkapon Phongthawee</string>
 	<string name="bugreport_url">https://www.facebook.com/ThridLand</string>
 	<string name="sourcecode_url">https://www.github.com/pureexe/hrnet</string>
+	
 </resources>

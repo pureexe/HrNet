@@ -62,10 +62,11 @@ public class DataManager {
 	}
 	/** get Setting **/
 	public String getSettingString(String key){
-        return PreferenceManager.getDefaultSharedPreferences(context).getString(key, "");
+        return PreferenceManager.getDefaultSharedPreferences(context).getString(key, "1");
     }
 	public boolean getSettingBoolean(String key){
-        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(key, true);
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(key,false);
     }
+
 	
 }

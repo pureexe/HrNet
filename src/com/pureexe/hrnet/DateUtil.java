@@ -9,13 +9,13 @@ import java.util.Date;
 import android.content.Context;
 
 public class DateUtil {
-	public static final int DATE_MONDAY = 1;
-	public static final int DATE_TUESDAY = 2;
-	public static final int DATE_WEDNESDAY = 3;
-	public static final int DATE_THURSDAY = 4;
-	public static final int DATE_FRIDAY = 5;
-	public static final int DATE_SATURDAY = 6;
-	public static final int DATE_SUNDAY = 7;
+	public static final int DATE_MONDAY = 2;
+	public static final int DATE_TUESDAY = 3;
+	public static final int DATE_WEDNESDAY = 4;
+	public static final int DATE_THURSDAY = 5;
+	public static final int DATE_FRIDAY = 6;
+	public static final int DATE_SATURDAY = 7;
+	public static final int DATE_SUNDAY = 1;
 	public static final int MONTH_JAN = 1;
 	public static final int MONTH_FEB = 2;
 	public static final int MONTH_MAR = 3;

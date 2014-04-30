@@ -33,7 +33,7 @@ public class UsageHistoryFragment extends Fragment {
 
 	public ActionBarActivity activity;
 	private DataManager dm;
-
+	private int FONT_SIZE = 8;
 	public UsageHistoryFragment() {
 
 	}
@@ -117,7 +117,7 @@ public class UsageHistoryFragment extends Fragment {
 			graphView.getGraphViewStyle().setVerticalLabelsColor(Color.BLACK);
 			graphView.getGraphViewStyle().setHorizontalLabelsColor(Color.BLACK);
 			graphView.setHorizontalLabels(HorizonLable);
-			graphView.getGraphViewStyle().setTextSize(graphView.getGraphViewStyle().getTextSize()*2/3);
+			graphView.getGraphViewStyle().setTextSize(PortableUtil.getDensity(getActivity())*FONT_SIZE);
 			for(i=0;i<7;i++){
 				u=dm.getInt("Date_"+DateUtil.getPastDate(DateUtil.getThisDate(), i));
 				if(u>maxValue)
@@ -206,7 +206,7 @@ public class UsageHistoryFragment extends Fragment {
 			graphView.getGraphViewStyle().setVerticalLabelsColor(Color.BLACK);
 			graphView.getGraphViewStyle().setHorizontalLabelsColor(Color.BLACK);
 			graphView.setHorizontalLabels(HorizonLable);
-			graphView.getGraphViewStyle().setTextSize(graphView.getGraphViewStyle().getTextSize()*2/3);
+			graphView.getGraphViewStyle().setTextSize(PortableUtil.getDensity(getActivity())*FONT_SIZE);
 			return graphView;
 	}
 	private GraphView initThisMonthGraph(){
@@ -280,7 +280,7 @@ public class UsageHistoryFragment extends Fragment {
 			graphView.getGraphViewStyle().setVerticalLabelsColor(Color.BLACK);
 			graphView.getGraphViewStyle().setHorizontalLabelsColor(Color.BLACK);
 			graphView.setHorizontalLabels(HorizonLable);
-			graphView.getGraphViewStyle().setTextSize(20);
+			graphView.getGraphViewStyle().setTextSize(PortableUtil.getDensity(getActivity())*FONT_SIZE);
 
 			return graphView;
 	}

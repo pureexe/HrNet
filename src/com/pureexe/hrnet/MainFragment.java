@@ -47,6 +47,12 @@ public class MainFragment extends Fragment {
 				false);
 		 time = (TextView) rootView.findViewById(R.id.textView1);
 		 txtwarn = (TextView) rootView.findViewById(R.id.textView3);
+		 float fontface = PortableUtil.getDensity(getActivity());
+/*		 if(fontface <=0.75){
+			 time.setTextSize(90);
+		 }*/
+		 time.setTextSize(50*PortableUtil.getDensity(getActivity()));
+		 //time.setTextSize(100);
 		  intent = new Intent(getActivity(), RefreshUIService.class);
 		return rootView;
 	}

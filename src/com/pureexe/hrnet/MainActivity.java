@@ -67,16 +67,20 @@ public class MainActivity extends ActionBarActivity {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new MainFragment()).commit();
 		}*/
+		
+		    
 		if(!ServiceUtil.checkServiceRunning(this, TimeCounterService.class)){
 			Intent active = new Intent(this, TimeCounterService.class);
 			startService(active);
 		}
-		dm = new DataManager(getApplicationContext());
+
+		dm = new DataManager(this);
 		if (NetworkUtil.getConnectivityStatus(this) != NetworkUtil.TYPE_NOT_CONNECTED) {
 				if((new Date().getTime()>=dm.getLong("LastCheckUpdate")+86400000)){
 					new UpdateCheckerTask(this).execute();
 			}
 		}
+		
 	}
 	
 

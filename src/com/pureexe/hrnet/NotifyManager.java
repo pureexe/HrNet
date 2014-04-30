@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 
-public class NotifyManager {
+public class NotifyManager{
 	private Context context;
 	private NotificationCompat.Builder mBuilder;
 	private Notification noti;
